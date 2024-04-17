@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+    <!--     Loading Javascript API From Esri -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.29/"></script>
+
+    <!-- Loading Calcite Design System -->
+    <script type="module" src="https://js.arcgis.com/calcite-components/2.7.1/calcite.esm.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/2.7.1/calcite.css" />
+
+    <!-- Application -->
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js"></script>
+
+
+</head>
+
+<body class = "calcite-mode-light">
+    <calcite-shell>
+        <!-- HEADER -->
+        <calcite-navigation slot="header">
+            <calcite-action slot="navigation-action" compact>
+                <img src="../Data_Input/NLCS_logo_400x400.jpg" style="width:50px;height:50px;" alt="NLCS logo">
+            </calcite-action>
+            <calcite-navigation-logo slot="logo" heading="Infrasructure Map of Thimphu"
+                description="The thimphu is presenting infrastructure data"></calcite-navigation-logo>
+            <calcite-action slot="content-end" id="app-details-action" appearance="transparent" scale="m"
+                text="app details" icon="information"></calcite-action>
+        </calcite-navigation>
+
+</body>
+
+
+<body>
+    <!-- Left Panel -->
+    <calcite-shell-panel slot="panel-start">
+        <calcite-panel>
+            <calcite-block heading="Map legend" collapsible close>
+                <calcite-icon slot="icon" icon="legend"></calcite-icon>
+                <div id="legend-container"></div>
+            </calcite-block>
+
+            <calcite-block heading="Layer List" collapsible close>
+                <calcite-icon slot="icon" icon="layers"></calcite-icon>
+                <div id="layerlist"></div>
+            </calcite-block>
+        </calcite-panel>
+    </calcite-shell-panel>
+
+    <!-- Map View(Center) -->
+    <calcite-panel>
+        <div id="viewDiv"></div>
+    </calcite-panel>
+    </calcite-shell>
+
+           <!-- APP DATA MODAL -->
+        <calcite-modal id="app-details-modal" docked>
+            <h3 slot="header">Welcome</h3>
+            <div slot="content">
+                <calcite-label>
+                    Welcome to Thimphu Map, your comprehensive guide to the heart of Bhutan's capital! Explore the
+                    intricate layers of Thimphu's infrastructure with ease.
+                    From roads to landmarks, our application provides you with essential insights to navigate the city
+                    seamlessly.
+                    Let's embark on a journey through Thimphu's vibrant streets together!
+                </calcite-label>
+            </div>
+            <div slot="back">
+                <calcite-label layout="inline">
+                    United Nations Satellite Centre (UNOSAT)
+                </calcite-label>
+            </div>
+        </calcite-modal>
+
+ 
+
+
+</body>
+
+</html>
